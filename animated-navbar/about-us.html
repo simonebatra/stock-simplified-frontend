@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Navbar</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+  <script>
+    const startAnimation = (entries, observer) => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle("slide-in-from-right", entry.isIntersecting);
+  });
+};
+
+const observer = new IntersectionObserver(startAnimation);
+const options = { root: null, rootMargin: '0px', threshold: 1 }; 
+
+const elements = document.querySelectorAll('.card');
+elements.forEach(el => {
+  observer.observe(el, options);
+});
+  </script>
+</head>
+<body>
+  <section class="home-intro">
+    <nav>
+      <input type="checkbox" id="sidebar-active">
+      <label for="sidebar-active" class="open-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </label>
+      <label id="overlay" for="sidebar-active"></label>
+      <div class="links-container">
+        <label for="sidebar-active" class="close-sidebar-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </label>
+  
+        <!-- NOT IN TUTORIAL: The <a> tags are linked to the subpages -->
+        <a class="home-link" href="index.html">Home</a> 
+        <a href="stocks.html">Stocks</a> 
+        <a href="news.html">News</a>
+        <a href="about-us.html"><b>About Us</b></a>
+        
+      </div>
+    </nav>
+    <h1 class="special-size1" style="line-height: 10%; margin: 10% 0">About Us </h1>
+  </section>
+
+  <div class="row">
+    <div class="column">
+      <div class="card">
+      <img style="margin-bottom:3vh; width: 100%;" src="/img/31572531694_34674934a3_k.jpg"/>
+      <h1 style="margin-top: 2vh;">SIMONE</h1>
+      <div style="margin-top:0" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit, quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem vero exercitationem consequuntur, eligendi cupiditate debitis facilis quibusdam magni. Eveniet.</div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img style="margin-bottom: 3vh; width: 100%;" src="/img/31572531694_34674934a3_k.jpg"/>
+        <h1 style="margin-top: 2vh;">KIAAN</h1>
+        <div style="margin-top:0" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit, quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem vero exercitationem consequuntur, eligendi cupiditate debitis facilis quibusdam magni. Eveniet.</div>
+        </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
