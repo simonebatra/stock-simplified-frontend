@@ -7,22 +7,22 @@
   <link rel="stylesheet" href="style.css">
   <link
   href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-  rel="stylesheet"
-/>
+  rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script>
     const startAnimation = (entries, observer) => {
-  entries.forEach(entry => {
-    entry.target.classList.toggle("slide-in-from-right", entry.isIntersecting);
-  });
-};
+      entries.forEach(entry => {
+        entry.target.classList.toggle("slide-in-from-right", entry.isIntersecting);
+      });
+    };
 
-const observer = new IntersectionObserver(startAnimation);
-const options = { root: null, rootMargin: '0px', threshold: 1 }; 
+    const observer = new IntersectionObserver(startAnimation);
+    const options = { root: null, rootMargin: '0px', threshold: 1 }; 
 
-const elements = document.querySelectorAll('.card');
-elements.forEach(el => {
-  observer.observe(el, options);
-});
+    const elements = document.querySelectorAll('.card');
+    elements.forEach(el => {
+      observer.observe(el, options);
+    });
   </script>
 </head>
 <body>
@@ -50,21 +50,28 @@ elements.forEach(el => {
     <p class="special-size2" style="font-weight: normal; padding-top: 10%"> Delivering stock news, the easy way </p>
     <p class="bouncing">SCROLL TO START YOUR LEARNING JOURNEY ↓</p>
   </section>
-
   <div class="row">
-    <div class="column">
-      <div class="card">
-      <img style="margin-bottom:3vh; width: 100%;" src="/img/31572531694_34674934a3_k.jpg"/>
-      <h1 style="margin-top: 2vh;">STOCK OF THE DAY</h1>
-      <div style="margin-top:0" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit, quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem vero exercitationem consequuntur, eligendi cupiditate debitis facilis quibusdam magni. Eveniet.</div>
+    <div class="col">
+      <div class="card h-100 m-5 card-back">
+        <h1 class="card-title font">STOCK OF THE DAY</h1>
+        <div class="card-text">
+          <h6>Insert Stock Here</h6>
+          <img src="./img/stock-home.png" class="rounded float-start img-fluid w-50 m-3">
+          <div class="m-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit, quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem vero exercitationem consequuntur, eligendi cupiditate debitis facilis quibusdam magni. Eveniet.</div>
+          <a class="btn button-color d-grid gap-2" href="#" role="button">VIEW TODAY'S STOCK PRICES</a>
+        </div>
       </div>
     </div>
-    <div class="column">
-      <div class="card">
-        <img style="margin-bottom: 3vh; width: 100%;" src="/img/31572531694_34674934a3_k.jpg"/>
-        <h1 style="margin-top: 2vh;">TOP NEWS</h1>
-        <div style="margin-top:0" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit, quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem vero exercitationem consequuntur, eligendi cupiditate debitis facilis quibusdam magni. Eveniet.</div>
+    <div class="col">
+      <div class="card h-100 m-5 card-back">
+        <h1 class="card-title font">TOP NEWS</h1>
+        <div class="card-text">
+          <h6>Insert News Here</h6>
+          <img src="./img/stock-home.png" class="rounded float-start img-fluid w-50 m-3">
+          <div class="m-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit, quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet omnis sapiente neque cumque consequuntur reiciendis deserunt. Dolorem vero exercitationem consequuntur, eligendi cupiditate debitis facilis quibusdam magni. Eveniet.</div>
+          <a class="btn button-color d-grid gap-2" href="#" role="button">VIEW THIS WEEK'S NEWS WITH OUR SUMMARIES</a>
         </div>
+      </div>
     </div>
   </div>
 
